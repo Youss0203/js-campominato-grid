@@ -11,33 +11,28 @@ const newGridElement = document.querySelector("section.main-content")
 
 const btnElement = document.querySelector("button")
 
-btnElement.addEventListener("click", function(){
-for(let i = 1; i <= 100; i++ ){
+btnElement.addEventListener("click", function () {
+    for (let i = 1; i <= 100; i++) {
 
-    const currentSquare = newSquareElement();
-    const squareContent = i;
+        const currentSquare = newSquareElement();
+        const squareContent = i;
 
-    currentSquare.innerHTML += `<span> ${squareContent} </span>`
+        currentSquare.innerHTML += `<span> ${squareContent} </span>`
 
-    currentSquare.addEventListener('click', function(){
-        currentSquare.classList.toggle('cliccked'); 
-        console.log(squareContent)
-    });
+        currentSquare.addEventListener('click', function () {
+            currentSquare.classList.toggle('cliccked');
+            console.log(squareContent)
+        });
 
-
-
-
-
-
-newGridElement.appendChild(currentSquare)
-}
+        newGridElement.appendChild(currentSquare)
+    }
 })
 
 
 
 
 /* funzione */
-function newSquareElement(){
+function newSquareElement() {
     const articleElement = document.createElement("article");
     articleElement.classList.add("square");
     return articleElement;
