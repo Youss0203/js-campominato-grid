@@ -9,17 +9,34 @@ emetto un messaggio in console con il numero della cella cliccata.
 
 const newGridElement = document.querySelector("section.main-content")
 
+const btnElement = document.querySelector("button")
 
-for(let i = 0; i <= 100; i++ ){
+btnElement.addEventListener("click", function(){
+for(let i = 1; i <= 100; i++ ){
 
     const currentSquare = newSquareElement();
     const squareContent = i;
 
     currentSquare.innerHTML += `<span> ${squareContent} </span>`
 
+    currentSquare.addEventListener('click', function(){
+        currentSquare.classList.toggle('cliccked'); 
+        console.log(squareContent)
+    });
+
+
+
+
+
+
 newGridElement.appendChild(currentSquare)
 }
+})
 
+
+
+
+/* funzione */
 function newSquareElement(){
     const articleElement = document.createElement("article");
     articleElement.classList.add("square");
